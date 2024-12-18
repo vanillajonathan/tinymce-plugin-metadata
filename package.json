@@ -1,0 +1,29 @@
+{
+  "name": "tinymce-plugin-metadata",
+  "version": "1.0.0",
+  "type": "module",
+  "author": "Jonathan",
+  "description": "Metadata plugin for TinyMCE",
+  "keywords": [
+    "tinymce"
+  ],
+  "homepage": "https://github.com/vanillajonathan/tinymce-plugin-metadata#readme",
+  "bugs": {
+    "url": "https://github.com/vanillajonathan/tinymce-plugin-metadata/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "repository": "github:vanillajonathan/tinymce-plugin-metadata",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "tinymce": "^7.6.0",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.3"
+  }
+}

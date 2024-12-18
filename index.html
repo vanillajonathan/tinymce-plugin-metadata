@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Metadata plugin demo page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.0/tinymce.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+  <p>Click the triangle icon in the toolbar or select <b>Edit metadata</b> from the <b>File</b> menu.</p>
+
+  <form method="post">
+    <input id="author" value="Alice" hidden />
+    <input id="copyright" value="2024" hidden />
+    <select id="fruit" hidden>
+      <option value="apple">Apple</option>
+      <option value="banana" selected>Banana</option>
+      <option value="pear">Pear</option>
+    </select>
+    <input type="checkbox" id="draft" hidden />
+    <input type="range" id="range" min="0" max="5" hidden />
+    <input type="color" id="color" hidden />
+    <textarea id="textarea" hidden></textarea>
+
+    <textarea class="tinymce"></textarea>
+  </form>
+
+  <p>The editor is located within a form that also contains hidden input elements.</p>
+
+<script>
+tinymce.init({
+    selector: "textarea.tinymce",
+    external_plugins: {
+      'metadata': '/dist/tinymce-plugin-metadata.js',
+    },
+    metadata: [
+      { label: "Author", id: "author" },
+      { label: "Copyright", id: "copyright" },
+      { label: "Fruit", id: "fruit" },
+      { label: "Draft", id: "draft" },
+      { label: "Range", id: "range" },
+      { label: "Color", id: "color" },
+      { label: "Textarea", id: "textarea" },
+    ],
+    menu: {
+      file: { title: 'File', items: 'newdocument separator metadata print' },
+    },
+    toolbar: "metadata | undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+});
+</script>
+
+</body>
+</html>
